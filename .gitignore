@@ -1,0 +1,11 @@
+# The IDE files.
+.idea/*
+
+# The C++ generated files.
+*.out
+
+# The CMake generated files.
+CMakeFiles/*
+CMakeCache.txt
+Makefile
+*.cmake
