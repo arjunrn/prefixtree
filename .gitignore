@@ -2,7 +2,7 @@
 .idea/*
 
 # The CMake generated files.
-CMakeFiles/*
+**/CMakeFiles/*
 CMakeCache.txt
 Makefile
 *.cmake
@@ -35,3 +35,6 @@ Makefile
 *.exe
 *.out
 *.app
+
+# Debugging files
+**/*.dSYM/*
