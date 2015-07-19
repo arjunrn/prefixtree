@@ -30,7 +30,20 @@ void Trie::addNode(const string key, int value) {
 }
 
 bool Trie::isNode(const string key) {
-    return false;
+    bool found = true;
+    TrieNode *n = this->root;
+    for (int i = 0; i < key.length(); i++) {
+        char curr = key[i];
+        int index = curr - 'a';
+        if (n->children[index] == nullptr) {
+            found = false;
+            break;
+        }
+        else {
+            n = n->children[index];
+        }
+    }
+    return found;
 }
 
 int Trie::getNode(const string key) {

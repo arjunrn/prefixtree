@@ -10,5 +10,7 @@ int main() {
     cout << "Hello World!!" << endl;
     cout << trie.getNode("arjun") << endl;
     cout << trie.getNode("arjunam") << endl;
+    cout << "Key Present: arjun: " << trie.isNode("arjun") << endl;
+    cout << "Key Present: mina: " << trie.isNode("mina") << endl;
     return 0;
 }
