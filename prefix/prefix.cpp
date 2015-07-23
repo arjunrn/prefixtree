@@ -4,11 +4,6 @@
 using namespace std;
 
 Trie::Trie() {
-    int first=0;
-    int second=0;
-    int third=0;
-    int fourth=0;
-    int temp=0;
     //we will build the trie here
     TrieNode *root = new TrieNode();
     //root->key = '$';
@@ -36,12 +31,13 @@ Trie::~Trie() {
 
 void Trie::addKeyValue(const int key, int value) {// in case we need a node, i think we have to create it here
     //we assume that the keys have the same number of digits, 4 for now
-    key/1000=first;
-    key%1000=temp;
-    temp/100=second;
-    temp%100=temp;
-    temp%10=fourth;
-    temp/10=third;
+    int temp;
+    this->first = key / 1000;
+    temp = key % 1000;
+    this->second = temp / 100;
+    temp = temp % 100;
+    this->fourth = temp % 10;
+    this->thrid = temp/10;
     TrieNode *n = this->root;
    // for (int i = 0; i < key.length(); i++) {
    // for (int i = 0; i < 4; i++) {

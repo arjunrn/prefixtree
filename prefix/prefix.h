@@ -4,10 +4,10 @@
 
 using namespace std;
 
-class Pointer{
-    TrieNode* pointer;
+//TODO: Make the pointer a generic class
+template <class PointerObj> class Pointer{
+    PointerObj* pointer;
     int parity;
-
 };
 
 class TrieNode {
@@ -15,19 +15,22 @@ public:
     //char key;
     int value;
     //TrieNode **children;
-    Pointer children[ALPHABET_SIZE];
+    Pointer<TrieNode> *children;
 
     TrieNode() {
-        //children = new TrieNode *[ALPHABET_SIZE];
-        for (int i = 0; i < ALPHABET_SIZE; i++) {
-            children[i].pointer = nullptr;
-            children[i].parity=0;
-        }
+        children = new Pointer<TrieNode>[ALPHABET_SIZE];
     }
+
+    ~TrieNode(){
+    	delete children;
+    }
+
 };
+
 
 class Trie {
 private:
+    int first, second, third, fourth, temp;
     TrieNode *root;
 public:
     Trie();
@@ -35,10 +38,10 @@ public:
     ~Trie();
 
     //void addNode(const string key, int value);
-    void addKeyValue(const int key,int value);
+    void addKeyValue(const int key, const int value);
     //void buildTrie();
 
-    bool isNode(const string key);
+    bool isNode(const int key);
 
-    int getNode(const string key);
+    int getNode(const int key);
 };
