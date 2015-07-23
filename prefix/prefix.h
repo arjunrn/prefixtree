@@ -1,20 +1,27 @@
 #include <string>
 
-#define ALPHABET_SIZE 26
+#define ALPHABET_SIZE 10
 
 using namespace std;
 
+class Pointer{
+    TrieNode* pointer;
+    int parity;
+
+};
 
 class TrieNode {
 public:
-    char key;
+    //char key;
     int value;
-    TrieNode **children;
+    //TrieNode **children;
+    Pointer children[ALPHABET_SIZE];
 
     TrieNode() {
-        children = new TrieNode *[ALPHABET_SIZE];
+        //children = new TrieNode *[ALPHABET_SIZE];
         for (int i = 0; i < ALPHABET_SIZE; i++) {
-            children[i] = nullptr;
+            children[i].pointer = nullptr;
+            children[i].parity=0;
         }
     }
 };
@@ -27,7 +34,9 @@ public:
 
     ~Trie();
 
-    void addNode(const string key, int value);
+    //void addNode(const string key, int value);
+    void addKeyValue(const int key,int value);
+    //void buildTrie();
 
     bool isNode(const string key);
 
