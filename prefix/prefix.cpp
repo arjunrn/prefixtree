@@ -37,7 +37,7 @@ void Trie::addKeyValue(const int key, int value) {// in case we need a node, i t
     this->second = temp / 100;
     temp = temp % 100;
     this->fourth = temp % 10;
-    this->thrid = temp/10;
+    this->third = temp/10;
     TrieNode *n = this->root;
    // for (int i = 0; i < key.length(); i++) {
    // for (int i = 0; i < 4; i++) {
@@ -55,41 +55,40 @@ void Trie::addKeyValue(const int key, int value) {// in case we need a node, i t
 
         }*/
 
-        //char curr = key[i];
-        //int index = curr - 'a';
-    if (n->children[first] == nullptr) {
+    if (n->children[first].pointer == nullptr) {
         TrieNode *newNode = new TrieNode();
         //newNode->key = curr;
-        n->children[first] = newNode;
+        n->children[first].pointer = newNode;
     }
-        n = n->children[first];
+        n = n->children[first].pointer;
 
-    if (n->children[second] == nullptr) {
+    if (n->children[second].pointer == nullptr) {
         TrieNode *newNode = new TrieNode();
         //newNode->key = curr;
-        n->children[second] = newNode;
+        n->children[second].pointer = newNode;
     }
-    n = n->children[second];
+    n = n->children[second].pointer;
 
-    if (n->children[third] == nullptr) {
+    if (n->children[third].pointer == nullptr) {
         TrieNode *newNode = new TrieNode();
         //newNode->key = curr;
-        n->children[third] = newNode;
+        n->children[third].pointer = newNode;
     }
-    n = n->children[third];
+    n = n->children[third].pointer;
 
-    if (n->children[fourth] == nullptr) {
+    if (n->children[fourth].pointer == nullptr) {
         TrieNode *newNode = new TrieNode();
         //newNode->key = curr;
-        n->children[fourth] = newNode;
+        n->children[fourth].pointer = newNode;
     }
-    n = n->children[fourth];
+    n = n->children[fourth].pointer;
 
     n->value = value;
+
 }
 
-bool Trie::isNode(const string key) {
-    bool found = true;
+bool Trie::isNode(const int key) {
+    /*bool found = true;
     TrieNode *n = this->root;
     for (int i = 0; i < key.length(); i++) {
         char curr = key[i];
@@ -101,39 +100,41 @@ bool Trie::isNode(const string key) {
         else {
             n = n->children[index];
         }
-    }
-    return found;
+    }*/
+    //return found;
+    return true;
 }
 
 int Trie::getNode(const int key) {
-    key/1000=first;
-    key%1000=temp;
-    temp/100=second;
-    temp%100=temp;
-    temp%10=fourth;
-    temp/10=third;
+    int temp;
+    this->first = key / 1000;
+    temp = key % 1000;
+    this->second=temp/100;
+    temp=temp % 100;
+    this->fourth=temp % 10;
+    this->third=temp / 10;
     bool flag = true;
     TrieNode *node = this->root;
     if(node->children[first].pointer== nullptr)
         flag=false;
     else
     {
-        node=node->children[first];
+        node=node->children[first].pointer;
         if(node->children[second].pointer==nullptr)
             flag=false;
         else
         {
-            node=node->children[second];
+            node=node->children[second].pointer;
             if(node->children[third].pointer==nullptr)
                 flag=false;
             else
             {
-                node=node->children[third];
+                node=node->children[third].pointer;
                 if(node->children[fourth].pointer==nullptr)
                     flag=false;
                 else
                 {
-                    node=node->children[fourth];
+                    node=node->children[fourth].pointer;
                 }
             }
         }
