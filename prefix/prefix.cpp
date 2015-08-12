@@ -26,7 +26,7 @@ void Trie::addKeyValue(const unsigned int key, int value)
             TrieNode *newNode = new TrieNode();
             n->children[(int)key].pointer = newNode;
         }
-        key = key >> 4;
+        bits = bits >> 4;
         n = n->children[(int)key].pointer;
     }
 
@@ -61,7 +61,7 @@ int Trie::getNode(const unsigned int key)
         if(n->children[(int)key].pointer == nullptr) {
             return -1;
         }
-        key = key >> 4;
+        bits = bits >> 4;
         n = n->children[(int)key].pointer;
     }
     return n->value;

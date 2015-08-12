@@ -27,7 +27,7 @@ public:
     TrieNode() {
      //   children = new Pointer<TrieNode>[ALPHABET_SIZE];
         //children=new Pointer[ALPHABET_SIZE];
-        for(int i=0;i<10;i++)
+        for(int i = 0 ; i < 0xF ; i++)
         {
             children[i].pointer= nullptr;
             children[i].parity=0;
