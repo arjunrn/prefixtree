@@ -40,7 +40,6 @@ public:
 
 class Trie {
 private:
-    int first, second, third, fourth, temp;
     TrieNode *root;
 public:
     Trie();
@@ -48,10 +47,10 @@ public:
     ~Trie();
 
     //void addNode(const string key, int value);
-    void addKeyValue(const int key, const int value);
+    void addKeyValue(const unsigned int key, const int value);
     //void buildTrie();
 
-    bool isNode(const int key);
+    bool isNode(const unsigned int key);
 
-    int getNode(const int key);
+    int getNode(const unsigned int key);
 };
