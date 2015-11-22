@@ -6,7 +6,7 @@
 \usepackage{comment}
 \usepackage{notes}
 \usepackage{color}
-\usepackage{}
+\usepackage{hyperref}
 \begin{document}
 \linespread{1.6}
 %\renewcommand{\baselinestretch}{1.5}
@@ -243,7 +243,7 @@ A Ctrie \cite{calfcht,ctenbs}, is a type of \textit{hash array mapped trie} \cit
 
 \subsection{Burst Trie \cite{burst}}
 
-In this paper, Burst trie has been introduced. In comparison with other structures, this structure is not using more memory than hash tables or other tree structures like binary search tree or Splay trees \cite{splay} or ternary search trees. In comparison to Splay trees, Burst trie can store 10 GB of vocabulary in $40%$ less   time. Burst trie is more efficient than ternary search tree in memory usage and has a better performance.
+In this paper, Burst trie has been introduced. In comparison with other structures, this structure is not using more memory than hash tables or other tree structures like binary search tree or Splay trees \cite{splay} or ternary search trees. In comparison to Splay trees, Burst trie can store 10 GB of vocabulary in $40\%$ less   time. Burst trie is more efficient than ternary search tree in memory usage and has a better performance.
 
 Search length in tree structures is higher than hash tables. Burst trie aimed on reducing string comparisons to less than two as well as caring about memory consumption.
 
@@ -348,7 +348,7 @@ In generalized trie, prefix size can be different, but prefix size must be a div
 Two properties have been mentioned for this structure.
 \begin{enumerate}
 \item Determinism: There exists only one path for each key in the tree.
-\item Worst-case Complexity: if we have a key with size K and prefix size $\K^'$ , then time complexity is $\mathcal{O}(h)$, where h is height of the tree and $h=K/\K^'$. 
+\item Worst-case Complexity: If we have a key with size K and prefix size $K^{\prime}$ , then time complexity is $\mathcal{O}(h)$, where h is height of the tree and $h=K/K^{\prime}$. 
 \end{enumerate}
 
 The problems that are seen in this trie structure is with \textit{trie height} and \textit {memory consumption}.
@@ -536,7 +536,7 @@ In the last method, it is obvious that using parity bits always causes extra mem
 
 For finding the density of the tree, two solutions has been suggested. In the first solution, the density of the tree is calculated based on the average number of children of the nodes in the tree. For this purpose, degree of a node( which defines the number of children of a node), is increased when another node is created and its address is assigned to one of the node's pointers. For keeping this data, map data structure in C++ has been used. So address of a node defines key and degree of the node defines value in a key/value pair in map, so whenever a pointer of a node is set to an address, the degree of that node will be increased in map data structure. After building the tree, all the pairs of the map data structure will be read and the average degree of the nodes will be calculated. If the result of the following equation is more than $0.625$, we assume that the tree is dense. 
 \begin{equation}
-Density & = \frac{degree(n_1)+degree(n_2)+...+degree(n_N)}{N}
+Density = \frac{degree(n_1)+degree(n_2)+...+degree(n_N)}{N}
 \end{equation}   
 
 A set of keys have been inserted into the tree and density of the tree has been calculated. At the start, we inserted keys which were multiples of three. The second set of keys were produced by using \textit{Uniform int distribution}. The third set of keys were produced by using \textit{Poisson distribution}.
@@ -622,10 +622,9 @@ In the following figure, a part of code which allocates memory for root, first a
 \includegraphics[scale=0.5]{memoryallocation}
 \caption{Virtual memory allocation for the first, second and third level }
 \centering
-
 \end{figure}
 
-By using \textit{mmap}, we can define to start the mapping from which address and also define the length of mapping. We have set PROT_READ and PROT_WRITE as the third argument, because pages can be read or written. As the fourth argument, MAP_ANON and MAP_PRIVATE has been set which defines that mapping is not backed by any file and its contents are initialized to zero.\cite{mmap}    
+By using \textit{mmap}, we can define to start the mapping from which address and also define the length of mapping. We have set PROT\_READ and PROT\_WRITE as the third argument, because pages can be read or written. As the fourth argument, MAP\_ANON and MAP\_PRIVATE has been set which defines that mapping is not backed by any file and its contents are initialized to zero. \cite{mmap}    
 
 After allocating enough memory for the whole structure, we started inserting key-value pairs into the tree. Both key and value is assumed to be 32 bit. So they can have value of 4000000000 at most. At the worst case, we might need to traverse to the last level in the tree. So we have a for loop with 8 iterations. The only exception in these iterations is when we are in the sixth and seventh level. In the sixth level, we have to set the pointers to the nodes or key-value pairs in the seventh level. But as we said before, seventh level has 8 sub levels. So we need to figure out the sub level in which the node is. Also if we are in the last level, then values will sit in the place of pointers.( Pointers and values are both 32 bits)
 
@@ -664,44 +663,37 @@ For getting a key from the tree, the first thing to do is to check the pointer w
 \bibitem{Graefe} G.Graefe,R.Stonecipher {\em Efficient verification of B-tree integrity} : Hewlett-Packard laboratories,Microsoft.
 
 \bibitem{harderror}
-Hard error definition,\\\texttt{http://www.webopedia.com/TERM/H/hard_error.html}
+Hard error definition, \url{http://www.webopedia.com/TERM/H/hard_error.html}
 
 \bibitem{softerror}
-Hard error definition,\\\texttt{http://www.webopedia.com/TERM/H/soft_error.html}
+Hard error definition, \url{http://www.webopedia.com/TERM/H/soft_error.html}
 
 \bibitem{reinhardt}
 Reinhardt, Steven K.; Mukherjee, Shubhendu S. "Transient fault detection via simultaneous multithreading".(2000) ACM SIGARCH Computer Architecture News 28 (2): 25–36
 
-\bibitem{mukherjee}
-Mukherjee, Shubhendu S.; Kontz, Michael; Reinhardt, Steven K. "Detailed design and evaluation of redundant multithreading alternatives".(2002) ACM SIGARCH Computer Architecture News 30 (2): 99.
+\bibitem{mukherjee} Mukherjee, Shubhendu S.; Kontz, Michael; Reinhardt, Steven K. "Detailed design and evaluation of redundant multithreading alternatives".(2002) ACM SIGARCH Computer Architecture News 30 (2): 99.
 
-\bibitem{vijaykumar}
-Vijaykumar, T. N.; Pomeranz, Irith; Cheng, Karl . "Transient-fault recovery using simultaneous multithreading".(2002) ACM SIGARCH Computer Architecture News 30 (2): 87.
+\bibitem{vijaykumar} Vijaykumar, T. N.; Pomeranz, Irith; Cheng, Karl . "Transient-fault recovery using simultaneous multithreading".(2002) ACM SIGARCH Computer Architecture News 30 (2): 87.
 
-\bibitem{soft}
-Soft errors detection,\\\texttt{https://en.wikipedia.org/wiki/Soft_error#Detecting_soft_errors}
+\bibitem{soft} Soft errors detection, \url{https://en.wikipedia.org/wiki/Soft_error#Detecting_soft_errors}
 
-\bibitem{immune}
-Immunity aware programming,\\\texttt{https://en.wikipedia.org/wiki/Immunity-aware_programming}
+\bibitem{immune} Immunity aware programming, \url{https://en.wikipedia.org/wiki/Immunity-aware_programming}
 
 
 \bibitem{ramparity}
-Immunity aware programming,\\\texttt{https://en.wikipedia.org/wiki/RAM_parity}
+Immunity aware programming,\url{https://en.wikipedia.org/wiki/RAM_parity}
 
-\bibitem{eccmemory}
-ECC memory,\\\texttt{https://en.wikipedia.org/wiki/ECC_memory}
+\bibitem{eccmemory} ECC memory,\url{https://en.wikipedia.org/wiki/ECC_memory}
 
-\bibitem{Kissinger}
-Thomas Kissinger, Benjamin Schlegel, Dirk Habich, Wolfgang Lehner. "KISS-Tree: Smart Latch-Free In-Memory Indexing on Modern Architectures".(2012) In: Proceedings of the Eighth International Workshop on Data Management on New Hardware, Scottsdale, AZ, USA.
+\bibitem{Kissinger} Thomas Kissinger, Benjamin Schlegel, Dirk Habich, Wolfgang Lehner. "KISS-Tree: Smart Latch-Free In-Memory Indexing on Modern Architectures".(2012) In: Proceedings of the Eighth International Workshop on Data Management on New Hardware, Scottsdale, AZ, USA.
  
 \bibitem{mmap}
-Mmap manual,\\\texttt{ http://man7.org/linux/man-pages/man2/mmap.2.html}
+Mmap manual,\url{ http://man7.org/linux/man-pages/man2/mmap.2.html}
 
-\bibitem{ctrie}
-Ctrie,\\\texttt{https://en.wikipedia.org/wiki/Ctrie}
+\bibitem{ctrie} Ctrie,\url{https://en.wikipedia.org/wiki/Ctrie}
 
 \bibitem{hamt}
-Hash Array Mapped Trie, \\\texttt{https://en.wikipedia.org/wiki/Hash_array_mapped_trie}
+Hash Array Mapped Trie, \url{https://en.wikipedia.org/wiki/Hash_array_mapped_trie}
 
 \bibitem{calfcht}
 Aleksandar Prokopec, Phil Bagwell, Martin Odersky, "Cache-Aware Lock-Free Concurrent Hash Tries". (2011) École Polytechnique Fédérale de Lausanne, Lausanne, Switzerland.
@@ -714,7 +706,7 @@ Steffen Heinz, Justin Zobel, Hugh E. Williams, "Burst Tries: A Fast, Efficient D
 GPO Box 2476V, Melbourne 3001, Australia
 
 \bibitem{splay}
- D.D. Sleator and R.E. Tarjan. "Self-adjusting binary search trees".(1985) In: A T&T Bell Laboratories, Murray Hill, NJ. 
+ D.D. Sleator and R.E. Tarjan. "Self-adjusting binary search trees".(1985) In: AT\&T Bell Laboratories, Murray Hill, NJ. 
 
 \end{thebibliography}
 
