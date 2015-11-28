@@ -1,8 +1,8 @@
-\documentclass{report}
+\documentclass[12pt]{report}
 \usepackage{amsmath}
 \usepackage{relsize}
 \usepackage{graphicx}
-\graphicspath{ {images/} }
+\graphicspath{ {./images/} }
 \usepackage{comment}
 \usepackage{notes}
 \usepackage{color}
@@ -19,7 +19,7 @@
 %----------------------------------------------------------------------------------------
 %	HEADING SECTIONS
 %----------------------------------------------------------------------------------------
-
+%[width=0.8\textwidth,natwidth=610,natheight=642]
 \includegraphics{logo_blau}\\[1cm]
 %\textsc{\LARGE Technical University of Dresden}\\[1.5cm] % Name of your university/college
 \textsc{\Large Master thesis}\\[0.5cm] % Major heading such as course name
@@ -234,10 +234,9 @@ At the start, virtual memory is allocated for each of the 64 possible node sizes
 
 A Ctrie \cite{calfcht,ctenbs}, is a type of \textit{hash array mapped trie} \cite{hamt} which is concurrent and lock-free. The methodology of Ctrie is used in KISS tree's  \cite{Kissinger} implementation. All the operations including insert, remove and search can be done concurrently in Ctrie. Based on the methods in \textit{hash array mapped trie}, hash code of a key is calculated. Each node can have up to 32 fragments. The memory will not be allocated for a node with 32 fragments because some of the fragments can be null pointers. At the start of each node, there is a 32 bits bitmap which defines which of the 32 fragments are set. Then an array with the size of all the ones in the bitmap is allocated. An operation called \textit{compare and swap} (CAS) is done on the node whenever a key is going to be inserted on that node. There are some indirection nodes in between of each node and its sub levels to make sure that the updates are done in the correct way. In the following figure, the initial picture of the tree and picture of the tree after insertion of some keys is given. Whenever there is a key with the same hash code, at least a level should be added into the tree and of course an indirection node is put in between.
 
-\begin{figure}[h]
-\includegraphics[scale=0.6]{ctrie}
+\begin{figure}[h!]
+\includegraphics[trim = 10mm 80mm 20mm 5mm, clip,  width=\textwidth, height=15cm]{ctrie}
 \caption{ Ctrie Insertion}
-\centering
 \end{figure} 
 
 
@@ -260,11 +259,9 @@ Structure of Burst trie contains of three main components:
 
 In the following figure, we see a tree after insertion of "came", "car", "cat", "cave", "cy", "cyan", "we", "went", "were", "west".
 
-\begin{figure}[h]
-\includegraphics[scale=0.6]{bursttrie}
+\begin{figure}[h!]
+\includegraphics[trim = 10mm 80mm 20mm 5mm, clip ,  width=\textwidth]{bursttrie}
 \caption{ Burst trie after insertion of a number of keys}
-
-\centering
 \end{figure}
 
 \subsubsection{Search}

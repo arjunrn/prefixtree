@@ -1,55 +1,55 @@
-\contentsline {chapter}{\numberline {1}Introduction}{3}
-\contentsline {section}{\numberline {1.1}Motivation}{3}
-\contentsline {section}{\numberline {1.2}Objectives}{3}
-\contentsline {section}{\numberline {1.3}Structure}{3}
-\contentsline {chapter}{\numberline {2}Background and Related works}{5}
-\contentsline {section}{\numberline {2.1}Background}{5}
-\contentsline {subsection}{\numberline {2.1.1}What is bit flip?}{5}
-\contentsline {subsection}{\numberline {2.1.2}Types of error}{5}
-\contentsline {subsection}{\numberline {2.1.3}Soft errors' detection mechanisms}{6}
-\contentsline {section}{\numberline {2.2}Related works}{7}
-\contentsline {subsection}{\numberline {2.2.1}A study of Index Structures for Main Memory Database Management Systems \cite {leca} }{7}
-\contentsline {subsubsection}{Array}{7}
-\contentsline {subsubsection}{AVL trees}{7}
-\contentsline {subsubsection}{B trees}{7}
-\contentsline {subsubsection}{Chained Bucket Hashing}{8}
-\contentsline {subsubsection}{Extendible Hashing}{8}
-\contentsline {subsubsection}{Linear Hashing}{8}
-\contentsline {subsubsection}{T tree}{8}
-\contentsline {subsection}{\numberline {2.2.2}Prefix B-trees \cite {R.Bayer} }{9}
-\contentsline {subsection}{\numberline {2.2.3}KISS-Tree: Small Latch-Free In-Memory Indexing on Modern Architectures \cite {Kissinger} }{9}
-\contentsline {subsubsection}{Operations}{10}
-\contentsline {subsubsection}{Memory management}{10}
-\contentsline {subsection}{\numberline {2.2.4}CTrie\cite {ctrie}}{10}
-\contentsline {subsection}{\numberline {2.2.5}Burst Trie \cite {burst}}{11}
-\contentsline {subsubsection}{Search}{11}
-\contentsline {subsubsection}{Insertion}{12}
-\contentsline {subsubsection}{Bursting}{12}
-\contentsline {subsection}{\numberline {2.2.6}Online Bit Flip Detection for In-Memory B-Trees on Unreliable Hardware \cite {kolditz} }{12}
-\contentsline {subsection}{\numberline {2.2.7}Efficient verification of B-tree integrity \cite {Graefe}}{14}
-\contentsline {subsubsection}{In-page verification}{14}
-\contentsline {subsubsection}{Index navigation}{14}
-\contentsline {subsubsection}{Aggregation of facts}{14}
-\contentsline {subsection}{\numberline {2.2.8}Efficient In-Memory Indexing with Generalized Prefix Trees \cite {Boehm}}{15}
-\contentsline {section}{\numberline {2.3}Summary}{16}
-\contentsline {chapter}{\numberline {3}Concept}{18}
-\contentsline {section}{\numberline {3.1}Basic structure of the Prefix tree}{18}
-\contentsline {section}{\numberline {3.2} Prefix tree with parity bits}{19}
-\contentsline {section}{\numberline {3.3}Keeping the nodes in a consecutive order in a pre allocated area of memory}{20}
-\contentsline {subsection}{\numberline {3.3.1}Finding density of the tree}{21}
-\contentsline {subsection}{\numberline {3.3.2}Creation of the tree}{21}
-\contentsline {subsection}{\numberline {3.3.3}Insertion of bit flips}{21}
-\contentsline {subsection}{\numberline {3.3.4}Evaluation}{22}
-\contentsline {section}{\numberline {3.4}Using a new method for bit flip detection }{22}
-\contentsline {subsection}{\numberline {3.4.1}Insertion in the tree}{23}
-\contentsline {subsection}{\numberline {3.4.2}get a value from the tree considering the occurrence of bit flips }{24}
-\contentsline {subsection}{\numberline {3.4.3}Insertion of bit flips in the tree}{25}
-\contentsline {chapter}{\numberline {4}Implementation}{26}
-\contentsline {section}{\numberline {4.1}Implementation of the basic Prefix tree}{26}
-\contentsline {section}{\numberline {4.2}Implementation of the Prefix tree with parity bits}{27}
-\contentsline {section}{\numberline {4.3}Implementation of the Prefix tree with having the nodes in a consecutive order in the memory}{28}
-\contentsline {subsection}{\numberline {4.3.1}Finding the density of the tree}{28}
-\contentsline {subsection}{\numberline {4.3.2}Creation of a dense tree with the new layout method}{29}
-\contentsline {subsection}{\numberline {4.3.3}Insertion of bit flips in the nodes}{29}
-\contentsline {subsection}{\numberline {4.3.4}Evaluation}{30}
-\contentsline {section}{\numberline {4.4}Memory optimized version of prefix tree}{31}
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Objectives}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Structure}{4}{section.1.3}
+\contentsline {chapter}{\numberline {2}Background and Related works}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Background}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}What is bit flip?}{5}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Types of error}{5}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Soft errors' detection mechanisms}{6}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Related works}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}A study of Index Structures for Main Memory Database Management Systems \cite {leca} }{7}{subsection.2.2.1}
+\contentsline {subsubsection}{Array}{8}{section*.2}
+\contentsline {subsubsection}{AVL trees}{8}{section*.3}
+\contentsline {subsubsection}{B trees}{8}{section*.4}
+\contentsline {subsubsection}{Chained Bucket Hashing}{8}{section*.5}
+\contentsline {subsubsection}{Extendible Hashing}{8}{section*.6}
+\contentsline {subsubsection}{Linear Hashing}{9}{section*.7}
+\contentsline {subsubsection}{T tree}{9}{section*.8}
+\contentsline {subsection}{\numberline {2.2.2}Prefix B-trees \cite {R.Bayer} }{10}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}KISS-Tree: Small Latch-Free In-Memory Indexing on Modern Architectures \cite {Kissinger} }{10}{subsection.2.2.3}
+\contentsline {subsubsection}{Operations}{11}{section*.9}
+\contentsline {subsubsection}{Memory management}{11}{section*.10}
+\contentsline {subsection}{\numberline {2.2.4}CTrie\cite {ctrie}}{12}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Burst Trie \cite {burst}}{12}{subsection.2.2.5}
+\contentsline {subsubsection}{Search}{15}{section*.11}
+\contentsline {subsubsection}{Insertion}{15}{section*.12}
+\contentsline {subsubsection}{Bursting}{15}{section*.13}
+\contentsline {subsection}{\numberline {2.2.6}Online Bit Flip Detection for In-Memory B-Trees on Unreliable Hardware \cite {kolditz} }{15}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}Efficient verification of B-tree integrity \cite {Graefe}}{17}{subsection.2.2.7}
+\contentsline {subsubsection}{In-page verification}{18}{section*.14}
+\contentsline {subsubsection}{Index navigation}{18}{section*.15}
+\contentsline {subsubsection}{Aggregation of facts}{18}{section*.16}
+\contentsline {subsection}{\numberline {2.2.8}Efficient In-Memory Indexing with Generalized Prefix Trees \cite {Boehm}}{19}{subsection.2.2.8}
+\contentsline {section}{\numberline {2.3}Summary}{21}{section.2.3}
+\contentsline {chapter}{\numberline {3}Concept}{22}{chapter.3}
+\contentsline {section}{\numberline {3.1}Basic structure of the Prefix tree}{23}{section.3.1}
+\contentsline {section}{\numberline {3.2} Prefix tree with parity bits}{24}{section.3.2}
+\contentsline {section}{\numberline {3.3}Keeping the nodes in a consecutive order in a pre allocated area of memory}{25}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Finding density of the tree}{25}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Creation of the tree}{26}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Insertion of bit flips}{26}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Evaluation}{27}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Using a new method for bit flip detection }{27}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Insertion in the tree}{29}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}get a value from the tree considering the occurrence of bit flips }{30}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Insertion of bit flips in the tree}{31}{subsection.3.4.3}
+\contentsline {chapter}{\numberline {4}Implementation}{32}{chapter.4}
+\contentsline {section}{\numberline {4.1}Implementation of the basic Prefix tree}{32}{section.4.1}
+\contentsline {section}{\numberline {4.2}Implementation of the Prefix tree with parity bits}{33}{section.4.2}
+\contentsline {section}{\numberline {4.3}Implementation of the Prefix tree with having the nodes in a consecutive order in the memory}{34}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Finding the density of the tree}{34}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Creation of a dense tree with the new layout method}{38}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Insertion of bit flips in the nodes}{38}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Evaluation}{39}{subsection.4.3.4}
+\contentsline {section}{\numberline {4.4}Memory optimized version of prefix tree}{39}{section.4.4}
